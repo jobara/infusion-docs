@@ -1,0 +1,582 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <title>Creating a New Adjuster UI | Fluid Infusion</title>
+        <link rel="stylesheet" href="../css/normalize.css">
+        <link rel="stylesheet" href="../css/foundation.css">
+        <link rel="stylesheet" href="../css/highlightjs-custom.css">
+        <link rel="stylesheet" type="text/css" href="../lib/infusion/src/framework/preferences/css/Enactors.css" />
+        <link rel="stylesheet" type="text/css" href="../lib/infusion/src/framework/preferences/css/PrefsEditor.css" />
+        <link rel="stylesheet" type="text/css" href="../lib/infusion/src/framework/preferences/css/SeparatedPanelPrefsEditor.css" />
+        <link rel="stylesheet" href="../css/infusion-docs.css">
+
+        <link rel="icon" type="image/png" href="../images/favico.png">
+
+        <script type="text/javascript" src="../lib/infusion/infusion-uio.js"></script>
+    </head>
+    <body class="infusion-docs">
+
+        <div class="container infusion-docs-container">
+
+            <!-- BEGIN markup for Preference Editor -->
+            <div class="flc-prefsEditor-separatedPanel fl-prefsEditor-separatedPanel">
+                <!-- This is the div that will contain the Preference Editor component -->
+                <div class="flc-slidingPanel-panel flc-prefsEditor-iframe"></div>
+
+                <!-- This div is for the sliding panel that shows and hides the Preference Editor controls -->
+                <div class="fl-panelBar">
+                    <span class="fl-prefsEditor-buttons">
+                        <button id="reset" class="flc-prefsEditor-reset fl-prefsEditor-reset"><span class="fl-icon-undo"></span> Reset</button>
+                        <button id="show-hide" class="flc-slidingPanel-toggleButton fl-prefsEditor-showHide"> Show/Hide</button>
+                    </span>
+                </div>
+            </div>
+            <!-- END markup for Preference Editor -->
+
+            <script type="text/javascript">
+                fluid.uiOptions.prefsEditor(".flc-prefsEditor-separatedPanel", {
+                    "templatePrefix": "../lib/infusion/src/framework/preferences/html/",
+                    "messagePrefix": "../lib/infusion/src/framework/preferences/messages/",
+                    "tocTemplate": "../lib/infusion/src/components/tableOfContents/html/TableOfContents.html"
+                });
+            </script>
+
+            <header class="row infusion-docs-header">
+                <div class="infusion-docs-fluidLogo small-12 medium-3 column">
+                    <a class="infusion-docs-fluidLogoText" href="../index.html" title="Infusion">infusion</a>
+                </div>
+
+                <nav class="small-12 medium-9 column">
+                    <a href="../index.html" title="Infusion">Infusion</a>
+                    <a href="../index-tutorials.html" title="Tutorials">Tutorials</a>
+                    <a href="../index-api.html" title="A P I">API</a>
+                </nav>
+            </header>
+
+            <div class="row infusion-docs-mainBody">
+                <nav class="infusion-docs-TOC small-12 medium-3 column">
+                    
+                        
+                        
+                    
+                        
+                        
+                            <span class="infusion-docs-category">Tutorials</span>
+                            
+                                <span class="infusion-docs-sectionName">Getting Started</span>
+                                <ul>
+                                    
+                                        <li>
+                                            
+                                                <a href="../tutorial-gettingStartedWithInfusion/GettingStartedWithInfusion.html"><span class="infusion-docs-TOC-pageName">Getting started with Infusion</span></a>
+                                            
+                                        </li>
+                                    
+                                        <li>
+                                            
+                                                <a href="../tutorial-gettingStartedWithInfusion/SetUpYourEnvironment.html"><span class="infusion-docs-TOC-pageName">Set up your environment</span></a>
+                                            
+                                        </li>
+                                    
+                                        <li>
+                                            
+                                                <a href="../tutorial-gettingStartedWithInfusion/DefineANamespaceAndCreateAClosure.html"><span class="infusion-docs-TOC-pageName">Define a namespace and create a closure</span></a>
+                                            
+                                        </li>
+                                    
+                                        <li>
+                                            
+                                                <a href="../tutorial-gettingStartedWithInfusion/PickAComponentType.html"><span class="infusion-docs-TOC-pageName">Pick a component type</span></a>
+                                            
+                                        </li>
+                                    
+                                        <li>
+                                            
+                                                <a href="../tutorial-gettingStartedWithInfusion/BasicComponentCreation-LittleComponents.html"><span class="infusion-docs-TOC-pageName">Basic Component Creation - Little Components</span></a>
+                                            
+                                        </li>
+                                    
+                                        <li>
+                                            
+                                                <a href="../tutorial-gettingStartedWithInfusion/ModelComponents.html"><span class="infusion-docs-TOC-pageName">Model Components</span></a>
+                                            
+                                        </li>
+                                    
+                                        <li>
+                                            
+                                                <a href="../tutorial-gettingStartedWithInfusion/EventedComponents.html"><span class="infusion-docs-TOC-pageName">Evented Components</span></a>
+                                            
+                                        </li>
+                                    
+                                        <li>
+                                            
+                                                <a href="../tutorial-gettingStartedWithInfusion/ViewComponents.html"><span class="infusion-docs-TOC-pageName">View Components</span></a>
+                                            
+                                        </li>
+                                    
+                                        <li>
+                                            
+                                                <a href="../tutorial-gettingStartedWithInfusion/RendererComponents.html"><span class="infusion-docs-TOC-pageName">Renderer Components</span></a>
+                                            
+                                        </li>
+                                    
+                                        <li>
+                                            
+                                                <a href="../tutorial-gettingStartedWithInfusion/Subcomponents.html"><span class="infusion-docs-TOC-pageName">Subcomponents</span></a>
+                                            
+                                        </li>
+                                    
+                                </ul>
+                            
+                                <span class="infusion-docs-sectionName">Preferences Editor</span>
+                                <ul>
+                                    
+                                        <li>
+                                            
+                                                <a href="../tutorial-creatingAPreferencesEditorUsingThePreferencesFramework/CreatingAPreferencesEditorUsingThePreferencesFramework.html"><span class="infusion-docs-TOC-pageName">Creating a preferences Editor Using the Preferences Framework</span></a>
+                                            
+                                        </li>
+                                    
+                                        <li>
+                                            
+                                                <a href="../tutorial-creatingAPreferencesEditorUsingThePreferencesFramework/CreatingAPrimarySchema.html"><span class="infusion-docs-TOC-pageName">Creating a Primary Schema</span></a>
+                                            
+                                        </li>
+                                    
+                                        <li>
+                                            
+                                                <a href="../tutorial-creatingAPreferencesEditorUsingThePreferencesFramework/CreatingPanels.html"><span class="infusion-docs-TOC-pageName">Creating Panels</span></a>
+                                            
+                                        </li>
+                                    
+                                        <li>
+                                            
+                                                <a href="../tutorial-creatingAPreferencesEditorUsingThePreferencesFramework/CreatingEnactors.html"><span class="infusion-docs-TOC-pageName">Creating Enactors</span></a>
+                                            
+                                        </li>
+                                    
+                                        <li>
+                                            
+                                                <a href="../tutorial-creatingAPreferencesEditorUsingThePreferencesFramework/CreatingAnAuxiliarySchema.html"><span class="infusion-docs-TOC-pageName">Creating an Auxiliary Schema</span></a>
+                                            
+                                        </li>
+                                    
+                                        <li>
+                                            
+                                                <a href="../tutorial-creatingAPreferencesEditorUsingThePreferencesFramework/InstantiatingThePreferencesEditor.html"><span class="infusion-docs-TOC-pageName">Instantiating the Preferences Editor</span></a>
+                                            
+                                        </li>
+                                    
+                                        <li>
+                                            
+                                                <a href="../tutorial-creatingAPreferencesEditorUsingThePreferencesFramework/InstantiatingTheEnhancerAndSettingsStoreOnly.html"><span class="infusion-docs-TOC-pageName">Instantiating the Enhancer and Settings Store Only</span></a>
+                                            
+                                        </li>
+                                    
+                                        <li>
+                                            
+                                                <a href="../tutorial-creatingAPreferencesEditorUsingThePreferencesFramework/StylingThePreferencesEditor.html"><span class="infusion-docs-TOC-pageName">Styling the Preferences Editor</span></a>
+                                            
+                                        </li>
+                                    
+                                        <li>
+                                            
+                                                <a href="../to-do/AddingPrefsEditorToSite.html"><span class="infusion-docs-TOC-pageName">Adding a Basic Preferences Editor to a Site</span></a>
+                                            
+                                        </li>
+                                    
+                                        <li>
+                                            
+                                                <a href="../to-do/WorkingWithPrefsEditorOnSite.html"><span class="infusion-docs-TOC-pageName">Working With A Preferences Editor On Your Site</span></a>
+                                            
+                                        </li>
+                                    
+                                        <li>
+                                            
+                                                <a href="../tutorial-usingStringTemplates/UsingStringTemplates.html"><span class="infusion-docs-TOC-pageName">Using String Templates</span></a>
+                                            
+                                        </li>
+                                    
+                                </ul>
+                            
+                                <span class="infusion-docs-sectionName">Creating an Adjuster UI</span>
+                                <ul>
+                                    
+                                        <li>
+                                            
+                                                <span class="infusion-docs-TOC-pageName">Creating a New Adjuster UI</span>
+                                            
+                                        </li>
+                                    
+                                        <li>
+                                            
+                                                <a href="HowToCreateAndUseFontIcons.html"><span class="infusion-docs-TOC-pageName">How to Create and Use Font Icons</span></a>
+                                            
+                                        </li>
+                                    
+                                </ul>
+                            
+                                <span class="infusion-docs-sectionName">User Interface Options</span>
+                                <ul>
+                                    
+                                        <li>
+                                            
+                                                <a href="../tutorial-userInterfaceOptions/UserInterfaceOptions.html"><span class="infusion-docs-TOC-pageName">User Interface Options</span></a>
+                                            
+                                        </li>
+                                    
+                                </ul>
+                            
+                        
+                    
+                        
+                        
+                    
+                </nav>
+
+                <article class="infusion-docs-mainContent small-12 medium-9 column">
+
+                    <div class="flc-toc-tocContainer infusion-docs-toc"> </div>
+
+                    <h1>Creating a New Adjuster UI</h1>
+
+                    <p class="infusion-docs-githubLink"><a href="https://github.com/fluid-project/infusion-docs/blob/master/src/documents/tutorial-creatingANewAdjusterUI/CreatingANewAdjusterUI.md" target="_blank">Edit on GitHub</a></p>
+
+                    
+
+                    <div class="infusion-docs-articleBody">
+                        <p>In the Infusion <a href="../PreferencesFramework.html">Preference Framework</a>, an &quot;adjuster&quot; is a single control for adjusting a particular preference. Common types of adjusters include checkboxes, radio buttons and sliders.</p>
+<p>This tutorial describes how to create the user interface for an adjuster.</p>
+<h2 id="decide-what-type-of-control-it-is">Decide what type of control it is</h2>
+<p>Based on the nature of the setting, different types of controls will be appropriate:</p>
+<ul>
+<li>checkboxes for on/off settings</li>
+<li>drop-down select boxes for choices</li>
+<li>radio buttons for choices where you want to present all choices visually</li>
+<li>sliders for choosing from a range of values</li>
+</ul>
+<p>Some examples:</p>
+<table>
+<thead>
+<tr>
+<th>Preference</th>
+<th>Possible HTML element</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>text size</td>
+<td>text input, slider</td>
+</tr>
+<tr>
+<td>foreground colour</td>
+<td>select (drop-down), radio button</td>
+</tr>
+<tr>
+<td>show captions</td>
+<td>checkbox</td>
+</tr>
+<tr>
+<td>language</td>
+<td>select (drop-down)</td>
+</tr>
+</tbody>
+</table>
+<h2 id="create-html-to-display-the-adjusters">Create HTML to display the adjusters</h2>
+<p>Once you know which type of HTML element you will be rendering, create an HTML template that will be used to render it. This will include the actual control as well as any labels, etc.</p>
+<p>For a control involving repeated data (e.g. a drop-down or radio buttons), your HTML template should include only one of the elements, along with its label, etc. The markup that is to be repeated multiple times should be enclosed in a single containing element such as a <code>&lt;div&gt;</code> or <code>&lt;span&gt;</code>.</p>
+<p>Some Examples</p>
+<table>
+    <thead>
+        <tr>
+            <th>HTML element</th>
+            <th>Sample Markup</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>drop-down</td>
+            <td>
+                <pre class="highlight"><code class="hljs vhdl">
+&lt;<span class="hljs-keyword">label</span> <span class="hljs-keyword">for</span>=<span class="hljs-string">"magnifier-position"</span>&gt;&lt;/<span class="hljs-keyword">label</span>&gt;
+&lt;<span class="hljs-keyword">select</span> id=<span class="hljs-string">"magnifier-position"</span>&gt;&lt;/<span class="hljs-keyword">select</span>&gt;
+                </code></pre>
+            </td>
+        </tr>
+        <tr>
+            <td>checkbox</td>
+            <td>
+                <pre class="highlight"><code class="hljs vhdl">
+&lt;input <span class="hljs-keyword">type</span>=<span class="hljs-string">"checkbox"</span> id=<span class="hljs-string">"media-choice"</span>/&gt;
+&lt;<span class="hljs-keyword">label</span> <span class="hljs-keyword">for</span>=<span class="hljs-string">"media-choice"</span>&gt;&lt;/<span class="hljs-keyword">label</span>&gt;
+                </code></pre>
+            </td>
+        </tr>
+        <tr>
+            <td>radio button</td>
+            <td>
+                <pre class="highlight"><code class="hljs xml">
+<span class="hljs-tag">&lt;<span class="hljs-title">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">input</span> <span class="hljs-attribute">type</span>=<span class="hljs-value">"radio"</span> <span class="hljs-attribute">name</span>=<span class="hljs-value">"theme"</span> <span class="hljs-attribute">id</span>=<span class="hljs-value">"bw"</span> <span class="hljs-attribute">value</span>=<span class="hljs-value">"bw"</span> /&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">label</span> <span class="hljs-attribute">for</span>=<span class="hljs-value">"bw"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">label</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+                </code></pre>
+            </td>
+        </tr>
+    </tbody>
+</table>
+
+<h2 id="add-selector-classes-to-any-element-that-will-be-rendered">Add selector classes to any element that will be rendered</h2>
+<p>Each element that will have to be rendered based on the data will need a &#39;selector class&#39; to allow the code to identify and manipulate it. This includes the control elements themselves as well as any labels, any elements that will have unique style classes added by the code, etc.</p>
+<p>We recommend using different class names for selector classes and styling classes. This results in markup that may look a but redundent, but it ensures that there are no accidental errors resulting in changes to the way styling happens, etc.</p>
+<p><a href="../ClassNameConventions.html">Class Name Conventions</a></p>
+<p>Some Examples</p>
+<table>
+    <thead>
+        <tr>
+            <th>HTML element</th>
+            <th>Sample Markup</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>drop-down</td>
+            <td>
+                <pre class="highlight"><code class="hljs vbnet">
+&lt;label <span class="hljs-keyword">class</span>=<span class="hljs-string">"flc-prefsEditor-magPositionLabel"</span> <span class="hljs-keyword">for</span>=<span class="hljs-string">"magnifier-position"</span>&gt;&lt;/label&gt;
+&lt;<span class="hljs-keyword">select</span> <span class="hljs-keyword">class</span>=<span class="hljs-string">"flc-prefsEditor-magPositionInput"</span> id=<span class="hljs-string">"magnifier-position"</span>&gt;&lt;/<span class="hljs-keyword">select</span>&gt;
+                </code></pre>
+            </td>
+        </tr>
+        <tr>
+            <td>checkbox</td>
+            <td>
+                <pre class="highlight"><code class="hljs fsharp">
+&lt;input <span class="hljs-keyword">class</span>=<span class="hljs-string">"flc-prefsEditor-captionsInput"</span> <span class="hljs-class"><span class="hljs-keyword">type</span>=</span><span class="hljs-string">"checkbox"</span> id=<span class="hljs-string">"captions-choice"</span>/&gt;
+&lt;label <span class="hljs-keyword">class</span>=<span class="hljs-string">"flc-prefsEditor-captionsLabel"</span> <span class="hljs-keyword">for</span>=<span class="hljs-string">"captions-choice"</span>&gt;&lt;/label&gt;
+                </code></pre>
+            </td>
+        </tr>
+        <tr>
+            <td>radio button</td>
+            <td>
+                <pre class="highlight"><code class="hljs applescript">
+&lt;<span class="hljs-keyword">div</span> <span class="hljs-type">class</span>=<span class="hljs-string">"flc-prefsEditor-themeRow"</span>&gt;
+    &lt;input <span class="hljs-type">class</span>=<span class="hljs-string">"flc-prefsEditor-themeInput"</span> type=<span class="hljs-string">"radio"</span> <span class="hljs-property">name</span>=<span class="hljs-string">"theme"</span> <span class="hljs-property">id</span>=<span class="hljs-string">"bw"</span> value=<span class="hljs-string">"bw"</span> /&gt;
+    &lt;label <span class="hljs-type">class</span>=<span class="hljs-string">"flc-prefsEditor-themeLabel"</span> <span class="hljs-keyword">for</span>=<span class="hljs-string">"bw"</span>&gt;&lt;/label&gt;
+&lt;/<span class="hljs-keyword">div</span>&gt;
+                </code></pre>
+            </td>
+        </tr>
+    </tbody>
+</table>
+
+<h2 id="custom-styling">Custom Styling</h2>
+<p>If the adjuster will be styled to look different than a traditional HTML form element, you will have to create special HTML and CSS to achieve the look you desire.</p>
+<p>If the control or its label(s) will include graphics, we recommend using an icon font for the graphics. Icon fonts will automatically adjust to the size and colours specified by the page or by a user&#39;s personal settings, without the need for additional CSS.</p>
+<p><a href="HowToCreateAndUseFontIcons.html">How to Create and Use Font Icons</a></p>
+<p>The CSS required will, of course, be dependent on the design. Some examples from existing interfaces are provided below, as inspiration.</p>
+<h3 id="example-1-a-radio-button-styled-colour-and-contrast-panel">Example 1: A radio button styled colour and contrast panel</h3>
+<h4 id="ui-and-markup">UI and MARKUP</h4>
+<p><img src="../images/radio-styled.png" alt="a radio button styled colour and contrast panel"></p>
+<pre class="highlight"><code class="hljs xml"> <span class="hljs-tag">&lt;<span class="hljs-title">h2</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">span</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"fl-icon-contrast"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">span</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">span</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"flc-prefsEditor-contrast-label heading-text"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">span</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">h2</span>&gt;</span>
+
+<span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"flc-prefsEditor-themeRow fl-choice"</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">input</span> <span class="hljs-attribute">type</span>=<span class="hljs-value">"radio"</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"flc-prefsEditor-themeInput fl-hidden-accessible"</span> <span class="hljs-attribute">name</span>=<span class="hljs-value">"theme"</span> <span class="hljs-attribute">id</span>=<span class="hljs-value">"bw"</span> <span class="hljs-attribute">value</span>=<span class="hljs-value">"bw"</span> /&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"fl-indicator"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">label</span> <span class="hljs-attribute">for</span>=<span class="hljs-value">"bw"</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"flc-prefsEditor-theme-label fl-theme-bw-prefsEditor"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">span</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"fl-preview-A"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">span</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">span</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"fl-hidden-accessible"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">span</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-title">label</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+</code></pre>
+<h4 id="stylus">Stylus</h4>
+<p>For the header:</p>
+<pre class="highlight"><code class="hljs scss"><span class="hljs-class">.fl-prefsEditor</span> {
+    <span class="hljs-class">.fl-icon-contrast</span> {
+        <span class="hljs-attribute">font-family</span><span class="hljs-value">: <span class="hljs-string">'InfusionIcons'</span> <span class="hljs-important">!important</span>;</span>
+        speak<span class="hljs-value">: none;</span>
+        <span class="hljs-attribute">font-style</span><span class="hljs-value">: normal;</span>
+        <span class="hljs-attribute">font-weight</span><span class="hljs-value">: normal;</span>
+        <span class="hljs-attribute">font-variant</span><span class="hljs-value">: normal;</span>
+        <span class="hljs-attribute">text-transform</span><span class="hljs-value">: none;</span>
+        -webkit-<span class="hljs-attribute">font</span>-smoothing<span class="hljs-value">: antialiased;</span>
+        <span class="hljs-attribute">float</span><span class="hljs-pseudo">:left</span>;
+        <span class="hljs-attribute">margin</span><span class="hljs-value">: <span class="hljs-number">0.2</span>em <span class="hljs-number">0.3</span>em <span class="hljs-number">0</span> <span class="hljs-number">0</span>;</span>
+        <span class="hljs-attribute">font-size</span><span class="hljs-value">: <span class="hljs-number">1.5</span>em;</span>
+    }
+
+    <span class="hljs-class">.fl-icon-toc</span><span class="hljs-pseudo">:before</span> {
+        <span class="hljs-attribute">content</span><span class="hljs-value">: <span class="hljs-string">"\e005"</span>;</span>
+    }
+}
+</code></pre>
+<p>For the radio buttons:</p>
+<pre class="highlight"><code class="hljs scss"><span class="hljs-comment">/* Theme radio buttons */</span>
+<span class="hljs-class">.fl-prefsEditor</span> {
+    <span class="hljs-class">.fl-choice</span> {
+        <span class="hljs-attribute">display</span><span class="hljs-value">: inline;</span>
+        <span class="hljs-attribute">float</span><span class="hljs-value">: left;</span>
+
+        <span class="hljs-tag">label</span> {
+            <span class="hljs-attribute">margin-right</span><span class="hljs-value">: <span class="hljs-number">5</span>px;</span>
+            <span class="hljs-attribute">border</span><span class="hljs-value">: <span class="hljs-number">1</span>px solid black;</span>
+            <span class="hljs-attribute">border-radius</span><span class="hljs-value">: <span class="hljs-number">5</span>px;</span>
+            <span class="hljs-attribute">height</span><span class="hljs-value">: <span class="hljs-number">3</span>em;</span>
+            <span class="hljs-attribute">width</span><span class="hljs-value">: <span class="hljs-number">3</span>em;</span>
+            <span class="hljs-attribute">text-align</span><span class="hljs-value">: center;</span>
+            <span class="hljs-attribute">vertical-align</span><span class="hljs-value">: middle;</span>
+            <span class="hljs-attribute">display</span><span class="hljs-value">: inline-block;</span>
+            <span class="hljs-attribute">line-height</span><span class="hljs-value">: <span class="hljs-number">3</span>em <span class="hljs-important">!important</span>;</span>
+            <span class="hljs-attribute">padding</span><span class="hljs-value">: <span class="hljs-number">2</span>px;</span>
+        }
+
+        <span class="hljs-class">.fl-preview-A</span> {
+            <span class="hljs-attribute">font-size</span><span class="hljs-value">: <span class="hljs-number">2</span>em;</span>
+        }
+
+        <span class="hljs-tag">input</span><span class="hljs-pseudo">:focus</span> ~ <span class="hljs-tag">label</span> {
+            <span class="hljs-attribute">outline</span><span class="hljs-value">: <span class="hljs-number">2</span>px solid black;</span>
+        }
+    }
+}
+</code></pre>
+<h3 id="example-2-a-checkbox-styled-table-of-contents-panel">Example 2: A checkbox styled table of contents panel</h3>
+<h4 id="ui-and-markup">UI and MARKUP</h4>
+<p><img src="../images/checkbox-styled.png" alt="a checkbox styled table of contents panel"></p>
+<pre class="highlight"><code class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-title">h2</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">span</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"fl-icon-toc"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">span</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">span</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"flc-prefsEditor-toc-label heading-text"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">span</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">h2</span>&gt;</span>
+
+<span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"fl-prefsEditor-onoff"</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">input</span> <span class="hljs-attribute">type</span>=<span class="hljs-value">"checkbox"</span> <span class="hljs-attribute">id</span>=<span class="hljs-value">"toc-choice"</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"flc-prefsEditor-toc"</span> /&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">label</span> <span class="hljs-attribute">for</span>=<span class="hljs-value">"toc-choice"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">span</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"fl-prefsEditor-switch"</span> <span class="hljs-attribute">data-checkboxStateOn</span>=<span class="hljs-value">"ON"</span> <span class="hljs-attribute">data-checkboxStateOff</span>=<span class="hljs-value">"OFF"</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">span</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"fl-prefsEditor-switch-inner"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">span</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-title">span</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">span</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"flc-prefsEditor-toc-choice-label"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">span</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-title">label</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+</code></pre>
+<h4 id="stylus">Stylus</h4>
+<p>For the switch:</p>
+<pre class="highlight"><code class="hljs scss"><span class="hljs-class">.fl-prefsEditor</span> {
+    <span class="hljs-comment">// ON/OFF Switch for checkboxes</span>
+    <span class="hljs-comment">// The container for the toggle, which is also a label for the hidden checkbox.</span>
+    <span class="hljs-class">.fl-prefsEditor-onoff</span> {
+        <span class="hljs-class">.fl-prefsEditor-switch</span> {
+            <span class="hljs-attribute">border-radius</span><span class="hljs-value">:<span class="hljs-number">50</span>px;</span>
+            <span class="hljs-attribute">border</span><span class="hljs-value">: <span class="hljs-number">1</span>px solid <span class="hljs-hexcolor">#776D67</span>;</span>
+            <span class="hljs-attribute">width</span><span class="hljs-value">: <span class="hljs-number">5</span>em;</span>
+            <span class="hljs-attribute">height</span><span class="hljs-value">: <span class="hljs-number">2</span>em;</span>
+            <span class="hljs-attribute">background-color</span><span class="hljs-value">: <span class="hljs-hexcolor">#E6E6E6</span>;</span>
+            <span class="hljs-attribute">box-shadow</span><span class="hljs-value">: <span class="hljs-number">1</span>em <span class="hljs-number">1.1</span>em <span class="hljs-number">0</span> <span class="hljs-number">0</span> rgba(<span class="hljs-number">250</span>,<span class="hljs-number">250</span>,<span class="hljs-number">250</span>,<span class="hljs-number">0.53</span>) inset;</span>
+            <span class="hljs-attribute">overflow</span><span class="hljs-value">: hidden;</span>
+            <span class="hljs-attribute">vertical-align</span><span class="hljs-value">: middle;</span>
+            <span class="hljs-attribute">display</span><span class="hljs-value">:inline-block;</span>
+            <span class="hljs-attribute">transition-duration</span><span class="hljs-value">: <span class="hljs-number">0.2</span>s;</span>
+            <span class="hljs-attribute">transition-property</span><span class="hljs-value">: padding-left, width, background-color, margin-left;</span>
+            <span class="hljs-attribute">font-size</span><span class="hljs-value">: <span class="hljs-number">1.2</span>em;</span>
+            <span class="hljs-attribute">font-weight</span><span class="hljs-value">: <span class="hljs-number">600</span>;</span>
+        }
+
+        <span class="hljs-comment">// Hide input</span>
+        <span class="hljs-tag">input</span> {
+            <span class="hljs-attribute">border</span><span class="hljs-value">: <span class="hljs-number">0</span> none;</span>
+            <span class="hljs-attribute">clip</span><span class="hljs-value">: rect(<span class="hljs-number">0</span>px, <span class="hljs-number">0</span>px, <span class="hljs-number">0</span>px, <span class="hljs-number">0</span>px);</span>
+            <span class="hljs-attribute">height</span><span class="hljs-value">: <span class="hljs-number">1</span>px;</span>
+            <span class="hljs-attribute">margin</span><span class="hljs-value">: -<span class="hljs-number">1</span>px;</span>
+            <span class="hljs-attribute">overflow</span><span class="hljs-value">: hidden;</span>
+            <span class="hljs-attribute">padding</span><span class="hljs-value">: <span class="hljs-number">0</span>;</span>
+            <span class="hljs-attribute">position</span><span class="hljs-value">: absolute;</span>
+            <span class="hljs-attribute">width</span><span class="hljs-value">: <span class="hljs-number">1</span>px;</span>
+        }
+
+        <span class="hljs-tag">input</span><span class="hljs-pseudo">:focus</span> + <span class="hljs-tag">label</span> {
+            <span class="hljs-attribute">outline</span><span class="hljs-value">: <span class="hljs-number">2</span>px solid black;</span>
+        }
+
+        <span class="hljs-tag">input</span><span class="hljs-pseudo">:checked</span> + <span class="hljs-tag">label</span> <span class="hljs-class">.fl-prefsEditor-switch</span> {
+            <span class="hljs-attribute">padding-left</span><span class="hljs-value">: <span class="hljs-number">3</span>em;</span>
+            <span class="hljs-attribute">width</span><span class="hljs-value">: <span class="hljs-number">2</span>em;</span>
+            <span class="hljs-attribute">background-color</span><span class="hljs-value">: <span class="hljs-hexcolor">#2da750</span>;</span>
+            <span class="hljs-attribute">box-shadow</span><span class="hljs-value">: -<span class="hljs-number">1</span>em <span class="hljs-number">1.1</span>em <span class="hljs-number">0.1</span>em <span class="hljs-number">0</span> rgba(<span class="hljs-number">172</span>, <span class="hljs-number">216</span>, <span class="hljs-number">92</span>, <span class="hljs-number">0.63</span>) inset;</span>
+
+            <span class="hljs-class">.fl-prefsEditor-switch-inner</span> {
+                <span class="hljs-attribute">top</span><span class="hljs-value">:-<span class="hljs-number">1.6</span>em;</span>
+                <span class="hljs-attribute">left</span><span class="hljs-value">: <span class="hljs-number">0.46</span>em;</span>
+            }
+        }
+        <span class="hljs-comment">// With data attributes defining the on/off text, localizing the templates is easier</span>
+        <span class="hljs-tag">input</span> + <span class="hljs-tag">label</span> {
+            <span class="hljs-attr_selector">[data-checkboxStateOn]</span><span class="hljs-pseudo">:before</span> {
+                <span class="hljs-attribute">content</span><span class="hljs-value">: attr(data-checkboxStateOn);</span>
+            }
+            <span class="hljs-attr_selector">[data-checkboxStateOff]</span><span class="hljs-pseudo">:after</span> {
+                <span class="hljs-attribute">content</span><span class="hljs-value">: attr(data-checkboxStateOff);</span>
+            }
+
+            <span class="hljs-comment">// The "on" portion of the toggle and the knob.</span>
+            <span class="hljs-class">.fl-prefsEditor-switch</span> {
+                &amp;<span class="hljs-pseudo">:before</span> {
+                    <span class="hljs-attribute">color</span><span class="hljs-value">: <span class="hljs-hexcolor">#fff</span>;</span>
+                    <span class="hljs-attribute">border</span><span class="hljs-value">: <span class="hljs-number">1</span>px solid <span class="hljs-hexcolor">#776D67</span>;</span>
+                    <span class="hljs-attribute">border-radius</span><span class="hljs-value">: <span class="hljs-number">50</span>px;</span>
+                    <span class="hljs-attribute">float</span><span class="hljs-pseudo">:left</span>;
+                    <span class="hljs-attribute">width</span><span class="hljs-value">:<span class="hljs-number">1.9</span>em;</span>
+                    <span class="hljs-attribute">height</span><span class="hljs-value">: <span class="hljs-number">1.9</span>em;</span> <span class="hljs-comment">// Width and height of the knob.</span>
+                    <span class="hljs-attribute">text-indent</span><span class="hljs-value">:-<span class="hljs-number">1.6</span>em;</span>
+                    <span class="hljs-attribute">line-height</span><span class="hljs-value">:<span class="hljs-number">1.7</span>em;</span>
+                    <span class="hljs-attribute">text-shadow</span><span class="hljs-value">: <span class="hljs-number">1</span>px <span class="hljs-number">1</span>px <span class="hljs-number">1</span>px <span class="hljs-hexcolor">#000</span>;</span>
+                    <span class="hljs-attribute">background-color</span><span class="hljs-value">: <span class="hljs-hexcolor">#fff</span>;</span>
+                    <span class="hljs-attribute">box-shadow</span><span class="hljs-value">: <span class="hljs-number">0.2</span>em <span class="hljs-number">0.2</span>em <span class="hljs-number">0.5</span>em <span class="hljs-hexcolor">#888</span>;</span>
+                    <span class="hljs-attribute">background-image</span><span class="hljs-value">: linear-gradient(bottom, rgb(<span class="hljs-number">205</span>,<span class="hljs-number">204</span>,<span class="hljs-number">202</span>) <span class="hljs-number">0</span>%, rgb(<span class="hljs-number">244</span>,<span class="hljs-number">244</span>,<span class="hljs-number">244</span>) <span class="hljs-number">100</span>%);</span>
+                }
+                <span class="hljs-comment">// The "off" portion of the toggle.</span>
+                &amp;<span class="hljs-pseudo">:after</span> {
+                    <span class="hljs-attribute">float</span><span class="hljs-value">: left;</span>
+                    <span class="hljs-attribute">position</span><span class="hljs-value">: relative;</span>
+                    <span class="hljs-attribute">top</span><span class="hljs-value">: <span class="hljs-number">0.36</span>em;</span>
+                    <span class="hljs-attribute">left</span><span class="hljs-value">: <span class="hljs-number">0.5</span>em;</span>
+                }
+            }
+        }
+
+        <span class="hljs-comment">// The dark inner circle to the toggle knob.</span>
+        <span class="hljs-class">.fl-prefsEditor-switch-inner</span> {
+            <span class="hljs-attribute">border</span><span class="hljs-value">: <span class="hljs-number">1</span>px solid <span class="hljs-hexcolor">#493A30</span>;</span>
+            <span class="hljs-attribute">border-radius</span><span class="hljs-value">: <span class="hljs-number">50</span>px;</span>
+            <span class="hljs-attribute">width</span><span class="hljs-value">: <span class="hljs-number">1</span>em;</span>
+            <span class="hljs-attribute">height</span><span class="hljs-value">: <span class="hljs-number">1</span>em;</span>
+            <span class="hljs-attribute">position</span><span class="hljs-value">: relative;</span>
+            <span class="hljs-attribute">left</span><span class="hljs-value">: -<span class="hljs-number">2.85</span>em;</span>
+            <span class="hljs-attribute">top</span><span class="hljs-value">: <span class="hljs-number">0.46</span>em;</span>
+            <span class="hljs-attribute">background-color</span><span class="hljs-value">: <span class="hljs-hexcolor">#675243</span>;</span>
+            <span class="hljs-attribute">box-shadow</span><span class="hljs-value">: <span class="hljs-number">0</span> -<span class="hljs-number">0.2</span>em <span class="hljs-number">0.3</span>em <span class="hljs-number">0.05</span>em rgba(<span class="hljs-number">250</span>, <span class="hljs-number">250</span>, <span class="hljs-number">250</span>, <span class="hljs-number">0.3</span>) inset;</span>
+            <span class="hljs-attribute">display</span><span class="hljs-value">: inline-block;</span>
+        }
+    }
+}
+</code></pre>
+
+                    </div>
+
+                </article>
+
+            </div>
+
+            <footer class="row infusion-docs-footer">
+                <p class="infusion-docs-footerInfusion">Infusion is created by the <a href="http://fluidproject.org/" target="_blank">Fluid Project</a>,<br/>
+                a project of the <a href="http://idrc.ocad.ca/" target="_blank">Inclusive Design Research Centre</a> at <a href="http://www.ocadu.ca/" target="_blank">OCAD University</a>, funded by a grant from <a href="http://www.mellon.org/" target="_blank">The Andrew W. Mellon Foundation</a>.</p>
+            </footer>
+
+        </div> <!-- end container -->
+
+    </body>
+</html>

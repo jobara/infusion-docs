@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <title>Instantiating the Preferences Editor | Fluid Infusion</title>
+        <link rel="stylesheet" href="../css/normalize.css">
+        <link rel="stylesheet" href="../css/foundation.css">
+        <link rel="stylesheet" href="../css/highlightjs-custom.css">
+        <link rel="stylesheet" type="text/css" href="../lib/infusion/src/framework/preferences/css/Enactors.css" />
+        <link rel="stylesheet" type="text/css" href="../lib/infusion/src/framework/preferences/css/PrefsEditor.css" />
+        <link rel="stylesheet" type="text/css" href="../lib/infusion/src/framework/preferences/css/SeparatedPanelPrefsEditor.css" />
+        <link rel="stylesheet" href="../css/infusion-docs.css">
+
+        <link rel="icon" type="image/png" href="../images/favico.png">
+
+        <script type="text/javascript" src="../lib/infusion/infusion-uio.js"></script>
+    </head>
+    <body class="infusion-docs">
+
+        <div class="container infusion-docs-container">
+
+            <!-- BEGIN markup for Preference Editor -->
+            <div class="flc-prefsEditor-separatedPanel fl-prefsEditor-separatedPanel">
+                <!-- This is the div that will contain the Preference Editor component -->
+                <div class="flc-slidingPanel-panel flc-prefsEditor-iframe"></div>
+
+                <!-- This div is for the sliding panel that shows and hides the Preference Editor controls -->
+                <div class="fl-panelBar">
+                    <span class="fl-prefsEditor-buttons">
+                        <button id="reset" class="flc-prefsEditor-reset fl-prefsEditor-reset"><span class="fl-icon-undo"></span> Reset</button>
+                        <button id="show-hide" class="flc-slidingPanel-toggleButton fl-prefsEditor-showHide"> Show/Hide</button>
+                    </span>
+                </div>
+            </div>
+            <!-- END markup for Preference Editor -->
+
+            <script type="text/javascript">
+                fluid.uiOptions.prefsEditor(".flc-prefsEditor-separatedPanel", {
+                    "templatePrefix": "../lib/infusion/src/framework/preferences/html/",
+                    "messagePrefix": "../lib/infusion/src/framework/preferences/messages/",
+                    "tocTemplate": "../lib/infusion/src/components/tableOfContents/html/TableOfContents.html"
+                });
+            </script>
+
+            <header class="row infusion-docs-header">
+                <div class="infusion-docs-fluidLogo small-12 medium-3 column">
+                    <a class="infusion-docs-fluidLogoText" href="../index.html" title="Infusion">infusion</a>
+                </div>
+
+                <nav class="small-12 medium-9 column">
+                    <a href="../index.html" title="Infusion">Infusion</a>
+                    <a href="../index-tutorials.html" title="Tutorials">Tutorials</a>
+                    <a href="../index-api.html" title="A P I">API</a>
+                </nav>
+            </header>
+
+            <div class="row infusion-docs-mainBody">
+                <nav class="infusion-docs-TOC small-12 medium-3 column">
+                    
+                        
+                        
+                    
+                        
+                        
+                            <span class="infusion-docs-category">Tutorials</span>
+                            
+                                <span class="infusion-docs-sectionName">Getting Started</span>
+                                <ul>
+                                    
+                                        <li>
+                                            
+                                                <a href="../tutorial-gettingStartedWithInfusion/GettingStartedWithInfusion.html"><span class="infusion-docs-TOC-pageName">Getting started with Infusion</span></a>
+                                            
+                                        </li>
+                                    
+                                        <li>
+                                            
+                                                <a href="../tutorial-gettingStartedWithInfusion/SetUpYourEnvironment.html"><span class="infusion-docs-TOC-pageName">Set up your environment</span></a>
+                                            
+                                        </li>
+                                    
+                                        <li>
+                                            
+                                                <a href="../tutorial-gettingStartedWithInfusion/DefineANamespaceAndCreateAClosure.html"><span class="infusion-docs-TOC-pageName">Define a namespace and create a closure</span></a>
+                                            
+                                        </li>
+                                    
+                                        <li>
+                                            
+                                                <a href="../tutorial-gettingStartedWithInfusion/PickAComponentType.html"><span class="infusion-docs-TOC-pageName">Pick a component type</span></a>
+                                            
+                                        </li>
+                                    
+                                        <li>
+                                            
+                                                <a href="../tutorial-gettingStartedWithInfusion/BasicComponentCreation-LittleComponents.html"><span class="infusion-docs-TOC-pageName">Basic Component Creation - Little Components</span></a>
+                                            
+                                        </li>
+                                    
+                                        <li>
+                                            
+                                                <a href="../tutorial-gettingStartedWithInfusion/ModelComponents.html"><span class="infusion-docs-TOC-pageName">Model Components</span></a>
+                                            
+                                        </li>
+                                    
+                                        <li>
+                                            
+                                                <a href="../tutorial-gettingStartedWithInfusion/EventedComponents.html"><span class="infusion-docs-TOC-pageName">Evented Components</span></a>
+                                            
+                                        </li>
+                                    
+                                        <li>
+                                            
+                                                <a href="../tutorial-gettingStartedWithInfusion/ViewComponents.html"><span class="infusion-docs-TOC-pageName">View Components</span></a>
+                                            
+                                        </li>
+                                    
+                                        <li>
+                                            
+                                                <a href="../tutorial-gettingStartedWithInfusion/RendererComponents.html"><span class="infusion-docs-TOC-pageName">Renderer Components</span></a>
+                                            
+                                        </li>
+                                    
+                                        <li>
+                                            
+                                                <a href="../tutorial-gettingStartedWithInfusion/Subcomponents.html"><span class="infusion-docs-TOC-pageName">Subcomponents</span></a>
+                                            
+                                        </li>
+                                    
+                                </ul>
+                            
+                                <span class="infusion-docs-sectionName">Preferences Editor</span>
+                                <ul>
+                                    
+                                        <li>
+                                            
+                                                <a href="CreatingAPreferencesEditorUsingThePreferencesFramework.html"><span class="infusion-docs-TOC-pageName">Creating a preferences Editor Using the Preferences Framework</span></a>
+                                            
+                                        </li>
+                                    
+                                        <li>
+                                            
+                                                <a href="CreatingAPrimarySchema.html"><span class="infusion-docs-TOC-pageName">Creating a Primary Schema</span></a>
+                                            
+                                        </li>
+                                    
+                                        <li>
+                                            
+                                                <a href="CreatingPanels.html"><span class="infusion-docs-TOC-pageName">Creating Panels</span></a>
+                                            
+                                        </li>
+                                    
+                                        <li>
+                                            
+                                                <a href="CreatingEnactors.html"><span class="infusion-docs-TOC-pageName">Creating Enactors</span></a>
+                                            
+                                        </li>
+                                    
+                                        <li>
+                                            
+                                                <a href="CreatingAnAuxiliarySchema.html"><span class="infusion-docs-TOC-pageName">Creating an Auxiliary Schema</span></a>
+                                            
+                                        </li>
+                                    
+                                        <li>
+                                            
+                                                <span class="infusion-docs-TOC-pageName">Instantiating the Preferences Editor</span>
+                                            
+                                        </li>
+                                    
+                                        <li>
+                                            
+                                                <a href="InstantiatingTheEnhancerAndSettingsStoreOnly.html"><span class="infusion-docs-TOC-pageName">Instantiating the Enhancer and Settings Store Only</span></a>
+                                            
+                                        </li>
+                                    
+                                        <li>
+                                            
+                                                <a href="StylingThePreferencesEditor.html"><span class="infusion-docs-TOC-pageName">Styling the Preferences Editor</span></a>
+                                            
+                                        </li>
+                                    
+                                        <li>
+                                            
+                                                <a href="../to-do/AddingPrefsEditorToSite.html"><span class="infusion-docs-TOC-pageName">Adding a Basic Preferences Editor to a Site</span></a>
+                                            
+                                        </li>
+                                    
+                                        <li>
+                                            
+                                                <a href="../to-do/WorkingWithPrefsEditorOnSite.html"><span class="infusion-docs-TOC-pageName">Working With A Preferences Editor On Your Site</span></a>
+                                            
+                                        </li>
+                                    
+                                        <li>
+                                            
+                                                <a href="../tutorial-usingStringTemplates/UsingStringTemplates.html"><span class="infusion-docs-TOC-pageName">Using String Templates</span></a>
+                                            
+                                        </li>
+                                    
+                                </ul>
+                            
+                                <span class="infusion-docs-sectionName">Creating an Adjuster UI</span>
+                                <ul>
+                                    
+                                        <li>
+                                            
+                                                <a href="../tutorial-creatingANewAdjusterUI/CreatingANewAdjusterUI.html"><span class="infusion-docs-TOC-pageName">Creating a New Adjuster UI</span></a>
+                                            
+                                        </li>
+                                    
+                                        <li>
+                                            
+                                                <a href="../tutorial-creatingANewAdjusterUI/HowToCreateAndUseFontIcons.html"><span class="infusion-docs-TOC-pageName">How to Create and Use Font Icons</span></a>
+                                            
+                                        </li>
+                                    
+                                </ul>
+                            
+                                <span class="infusion-docs-sectionName">User Interface Options</span>
+                                <ul>
+                                    
+                                        <li>
+                                            
+                                                <a href="../tutorial-userInterfaceOptions/UserInterfaceOptions.html"><span class="infusion-docs-TOC-pageName">User Interface Options</span></a>
+                                            
+                                        </li>
+                                    
+                                </ul>
+                            
+                        
+                    
+                        
+                        
+                    
+                </nav>
+
+                <article class="infusion-docs-mainContent small-12 medium-9 column">
+
+                    <div class="flc-toc-tocContainer infusion-docs-toc"> </div>
+
+                    <h1>Instantiating the Preferences Editor</h1>
+
+                    <p class="infusion-docs-githubLink"><a href="https://github.com/fluid-project/infusion-docs/blob/master/src/documents/tutorial-creatingAPreferencesEditorUsingThePreferencesFramework/InstantiatingThePreferencesEditor.md" target="_blank">Edit on GitHub</a></p>
+
+                    
+
+                    <div class="infusion-docs-articleBody">
+                        <hr>
+<p>Part of the <a href="CreatingAPreferencesEditorUsingThePreferencesFramework.html">Creating a Preferences Editor Using the Preferences Framework Tutorial</a></p>
+<p>This article describes how to instantiate a preferences editor created using the Infusion <a href="../PreferencesFramework.html">Preferences Framework</a></p>
+<hr>
+<h2 id="using-a-single-function-call">Using a Single Function Call</h2>
+<p>The simplest way to instantiate the Preferences Editor defined by your schemas is using the convenience function <code>fluid.prefs.create()</code>. This function uses the schemas you specify to build all the necessary components, including the Editor itself, the settings store and the enhancer and enactors. It instantiates and renders the Editor onto the page and returns the editor object.</p>
+<h3 id="separatedpanel-editor">SeparatedPanel Editor</h3>
+<p>The default layout for a Preferences Editor is a separated panel, typically rendered at the top of the page and hidden until a user interaction that slides it into view. The following examples show this use, using either the <code>auxiliarySchema</code> property or an auxiliary schema grade:</p>
+<h4 id="example-instantiation-using-auxiliaryschema-property">Example: Instantiation Using <code>auxiliarySchema</code> Property</h4>
+<pre class="highlight"><code class="hljs javascript"><span class="hljs-keyword">var</span> myEditor = fluid.prefs.create(<span class="hljs-string">".prefs-editor-container"</span>, {
+    build: {
+        primarySchema: myPrimarySchema,
+        auxiliarySchema: myAuxiliarySchema
+    }
+});
+</code></pre>
+<h4 id="example-instantiation-using-auxiliary-schema-grade">Example: Instantiation Using Auxiliary Schema Grade</h4>
+<pre class="highlight"><code class="hljs javascript"><span class="hljs-keyword">var</span> myEditor = fluid.prefs.create(<span class="hljs-string">".prefs-editor-container"</span>, {
+    build: {
+        gradeNames: [<span class="hljs-string">"my.auxSchemaGrade"</span>],
+        primarySchema: myPrimarySchema
+    }
+});
+</code></pre>
+<h3 id="full-page-editor">Full-Page Editor</h3>
+<p>The Preferences Framework also provides built-in configurations for two full-page modes: with or without a preview. To choose one of these configurations, add a second option, as shown in the example below:</p>
+<h4 id="sample-instantiation-of-a-full-page-preferences-editor-with-no-preview">Sample Instantiation of a Full-page Preferences Editor with No Preview</h4>
+<pre class="highlight"><code class="hljs javascript"><span class="hljs-keyword">var</span> myEditor = fluid.prefs.create(<span class="hljs-string">".prefs-editor-container"</span>, {
+    build: {
+        primarySchema: myPrimarySchema,
+        auxiliaryScham: myAuxiliarySchema
+    },
+    prefsEditor: {
+        prefsEditorType: <span class="hljs-string">"fluid.prefs.fullNoPreview"</span>
+    }
+});
+</code></pre>
+<h4 id="sample-instantiation-of-a-full-page-preferences-editor-with-a-preview">Sample Instantiation of a Full-page Preferences Editor with a Preview</h4>
+<pre class="highlight"><code class="hljs javascript"><span class="hljs-keyword">var</span> myEditor = fluid.prefs.create(<span class="hljs-string">".prefs-editor-container"</span>, {
+    build: {
+        primarySchema: myPrimarySchema,
+        auxiliaryScham: myAuxiliarySchema
+    },
+    prefsEditor: {
+        prefsEditorType: <span class="hljs-string">"fluid.prefs.fullPreview"</span>,
+        prefsEditor: {
+            preview: {
+                templateUrl: <span class="hljs-string">"html/previewTemplate.html"</span>
+            }
+        }
+    }
+});
+</code></pre>
+<p>In this example, the <code>preview.templateUrl</code> options specifies the relative path and filename of an HTML template to use inside the preview iFrame.</p>
+<h2 id="using-the-builder">Using the Builder</h2>
+<p>You can also instantiate the Preferences Editor using a two-step process:</p>
+<ol>
+<li>Use the Builder to build the editor, then</li>
+<li>Instantiate the editor built by the builder.</li>
+</ol>
+<p>The single function call described in the previous section actually carries out these two steps for you, it just conveniently hides that fact from you. If you are going to be instantiating only the settings store and the page enhancer, then you must use this two-step process, so if you&#39;re planning to write a single script that can be shared on pages that do and don&#39;t have the preferences editor, you&#39;ll want to use this process.</p>
+<h3 id="build-the-editor">Build the Editor</h3>
+<p>Build the editor, settings store and enhancer with a call to the Preferences Framework Builder. As with the single function call described above, the Builder can be used with either the <code>auxiliarySchema</code> property or with an auxiliary schema grade.</p>
+<div class="infusion-docs-note"><strong>Note:</strong> If you&#39;re going to use the builder, your auxiliary schema <strong>MUST</strong> specify a namespace. You&#39;ll need this namespace to access the components created by the builder.</div>
+
+<h4 id="example-using-the-builder-with-the-auxiliaryschema-property">Example: Using the Builder with the <code>auxiliarySchema</code> Property</h4>
+<pre class="highlight"><code class="hljs javascript">vary myAuxiliarySchema = {
+    namespace: <span class="hljs-string">"my.prefs"</span>,
+    ...
+};
+
+fluid.prefs.builder({
+    primarySchema: myPrimarySchema,
+    auxiliaryScham: myAuxiliarySchema
+});
+</code></pre>
+<h4 id="example-using-the-builder-with-an-auxiliary-schema-grade">Example: Using the Builder with an Auxiliary Schema Grade</h4>
+<pre class="highlight"><code class="hljs javascript">fluid.defaults(<span class="hljs-string">"my.auxSchemaGrade"</span>, {
+    gradeNames: [<span class="hljs-string">"fluid.prefs.auxSchema"</span>, <span class="hljs-string">"autoInit"</span>],
+    auxiliarySchema: {
+        namespace: <span class="hljs-string">"my.prefs"</span>,
+        ....
+    }
+});
+
+fluid.prefs.builder({
+    gradeNames: [<span class="hljs-string">"my.auxSchemaGrade"</span>],
+    primarySchema: myPrimarySchema
+});
+</code></pre>
+<h3 id="instantiate-the-editor">Instantiate the Editor</h3>
+<p>Once you&#39;ve run the builder, you can access the preferences editor through the namespace you specified in your auxiliary schema:</p>
+<h4 id="instantiating-the-default-separated-panel-editor">Instantiating the Default Separated Panel Editor</h4>
+<pre class="highlight"><code class="hljs javascript"><span class="hljs-keyword">var</span> myEditor = my.prefs.prefsEditor(<span class="hljs-string">".prefs-editor-container"</span>);
+</code></pre>
+<h4 id="instantiating-a-full-page-with-preview-editor">Instantiating a &#39;Full-page with Preview&#39; Editor</h4>
+<pre class="highlight"><code class="hljs javascript"><span class="hljs-keyword">var</span> myEditor = my.prefs.prefsEditor(<span class="hljs-string">".prefs-editor-container"</span>, {
+    prefsEditorType: <span class="hljs-string">"fluid.prefs.fullPreview"</span>,
+    prefsEditor: {
+        preview: {
+            templateUrl: <span class="hljs-string">"html/previewTemplate.html"</span>
+        }
+    }
+});
+</code></pre>
+
+                    </div>
+
+                </article>
+
+            </div>
+
+            <footer class="row infusion-docs-footer">
+                <p class="infusion-docs-footerInfusion">Infusion is created by the <a href="http://fluidproject.org/" target="_blank">Fluid Project</a>,<br/>
+                a project of the <a href="http://idrc.ocad.ca/" target="_blank">Inclusive Design Research Centre</a> at <a href="http://www.ocadu.ca/" target="_blank">OCAD University</a>, funded by a grant from <a href="http://www.mellon.org/" target="_blank">The Andrew W. Mellon Foundation</a>.</p>
+            </footer>
+
+        </div> <!-- end container -->
+
+    </body>
+</html>

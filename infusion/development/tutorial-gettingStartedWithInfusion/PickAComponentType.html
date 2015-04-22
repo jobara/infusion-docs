@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <title>Pick a component type | Fluid Infusion</title>
+        <link rel="stylesheet" href="../css/normalize.css">
+        <link rel="stylesheet" href="../css/foundation.css">
+        <link rel="stylesheet" href="../css/highlightjs-custom.css">
+        <link rel="stylesheet" type="text/css" href="../lib/infusion/src/framework/preferences/css/Enactors.css" />
+        <link rel="stylesheet" type="text/css" href="../lib/infusion/src/framework/preferences/css/PrefsEditor.css" />
+        <link rel="stylesheet" type="text/css" href="../lib/infusion/src/framework/preferences/css/SeparatedPanelPrefsEditor.css" />
+        <link rel="stylesheet" href="../css/infusion-docs.css">
+
+        <link rel="icon" type="image/png" href="../images/favico.png">
+
+        <script type="text/javascript" src="../lib/infusion/infusion-uio.js"></script>
+    </head>
+    <body class="infusion-docs">
+
+        <div class="container infusion-docs-container">
+
+            <!-- BEGIN markup for Preference Editor -->
+            <div class="flc-prefsEditor-separatedPanel fl-prefsEditor-separatedPanel">
+                <!-- This is the div that will contain the Preference Editor component -->
+                <div class="flc-slidingPanel-panel flc-prefsEditor-iframe"></div>
+
+                <!-- This div is for the sliding panel that shows and hides the Preference Editor controls -->
+                <div class="fl-panelBar">
+                    <span class="fl-prefsEditor-buttons">
+                        <button id="reset" class="flc-prefsEditor-reset fl-prefsEditor-reset"><span class="fl-icon-undo"></span> Reset</button>
+                        <button id="show-hide" class="flc-slidingPanel-toggleButton fl-prefsEditor-showHide"> Show/Hide</button>
+                    </span>
+                </div>
+            </div>
+            <!-- END markup for Preference Editor -->
+
+            <script type="text/javascript">
+                fluid.uiOptions.prefsEditor(".flc-prefsEditor-separatedPanel", {
+                    "templatePrefix": "../lib/infusion/src/framework/preferences/html/",
+                    "messagePrefix": "../lib/infusion/src/framework/preferences/messages/",
+                    "tocTemplate": "../lib/infusion/src/components/tableOfContents/html/TableOfContents.html"
+                });
+            </script>
+
+            <header class="row infusion-docs-header">
+                <div class="infusion-docs-fluidLogo small-12 medium-3 column">
+                    <a class="infusion-docs-fluidLogoText" href="../index.html" title="Infusion">infusion</a>
+                </div>
+
+                <nav class="small-12 medium-9 column">
+                    <a href="../index.html" title="Infusion">Infusion</a>
+                    <a href="../index-tutorials.html" title="Tutorials">Tutorials</a>
+                    <a href="../index-api.html" title="A P I">API</a>
+                </nav>
+            </header>
+
+            <div class="row infusion-docs-mainBody">
+                <nav class="infusion-docs-TOC small-12 medium-3 column">
+                    
+                        
+                        
+                    
+                        
+                        
+                            <span class="infusion-docs-category">Tutorials</span>
+                            
+                                <span class="infusion-docs-sectionName">Getting Started</span>
+                                <ul>
+                                    
+                                        <li>
+                                            
+                                                <a href="GettingStartedWithInfusion.html"><span class="infusion-docs-TOC-pageName">Getting started with Infusion</span></a>
+                                            
+                                        </li>
+                                    
+                                        <li>
+                                            
+                                                <a href="SetUpYourEnvironment.html"><span class="infusion-docs-TOC-pageName">Set up your environment</span></a>
+                                            
+                                        </li>
+                                    
+                                        <li>
+                                            
+                                                <a href="DefineANamespaceAndCreateAClosure.html"><span class="infusion-docs-TOC-pageName">Define a namespace and create a closure</span></a>
+                                            
+                                        </li>
+                                    
+                                        <li>
+                                            
+                                                <span class="infusion-docs-TOC-pageName">Pick a component type</span>
+                                            
+                                        </li>
+                                    
+                                        <li>
+                                            
+                                                <a href="BasicComponentCreation-LittleComponents.html"><span class="infusion-docs-TOC-pageName">Basic Component Creation - Little Components</span></a>
+                                            
+                                        </li>
+                                    
+                                        <li>
+                                            
+                                                <a href="ModelComponents.html"><span class="infusion-docs-TOC-pageName">Model Components</span></a>
+                                            
+                                        </li>
+                                    
+                                        <li>
+                                            
+                                                <a href="EventedComponents.html"><span class="infusion-docs-TOC-pageName">Evented Components</span></a>
+                                            
+                                        </li>
+                                    
+                                        <li>
+                                            
+                                                <a href="ViewComponents.html"><span class="infusion-docs-TOC-pageName">View Components</span></a>
+                                            
+                                        </li>
+                                    
+                                        <li>
+                                            
+                                                <a href="RendererComponents.html"><span class="infusion-docs-TOC-pageName">Renderer Components</span></a>
+                                            
+                                        </li>
+                                    
+                                        <li>
+                                            
+                                                <a href="Subcomponents.html"><span class="infusion-docs-TOC-pageName">Subcomponents</span></a>
+                                            
+                                        </li>
+                                    
+                                </ul>
+                            
+                                <span class="infusion-docs-sectionName">Preferences Editor</span>
+                                <ul>
+                                    
+                                        <li>
+                                            
+                                                <a href="../tutorial-creatingAPreferencesEditorUsingThePreferencesFramework/CreatingAPreferencesEditorUsingThePreferencesFramework.html"><span class="infusion-docs-TOC-pageName">Creating a preferences Editor Using the Preferences Framework</span></a>
+                                            
+                                        </li>
+                                    
+                                        <li>
+                                            
+                                                <a href="../tutorial-creatingAPreferencesEditorUsingThePreferencesFramework/CreatingAPrimarySchema.html"><span class="infusion-docs-TOC-pageName">Creating a Primary Schema</span></a>
+                                            
+                                        </li>
+                                    
+                                        <li>
+                                            
+                                                <a href="../tutorial-creatingAPreferencesEditorUsingThePreferencesFramework/CreatingPanels.html"><span class="infusion-docs-TOC-pageName">Creating Panels</span></a>
+                                            
+                                        </li>
+                                    
+                                        <li>
+                                            
+                                                <a href="../tutorial-creatingAPreferencesEditorUsingThePreferencesFramework/CreatingEnactors.html"><span class="infusion-docs-TOC-pageName">Creating Enactors</span></a>
+                                            
+                                        </li>
+                                    
+                                        <li>
+                                            
+                                                <a href="../tutorial-creatingAPreferencesEditorUsingThePreferencesFramework/CreatingAnAuxiliarySchema.html"><span class="infusion-docs-TOC-pageName">Creating an Auxiliary Schema</span></a>
+                                            
+                                        </li>
+                                    
+                                        <li>
+                                            
+                                                <a href="../tutorial-creatingAPreferencesEditorUsingThePreferencesFramework/InstantiatingThePreferencesEditor.html"><span class="infusion-docs-TOC-pageName">Instantiating the Preferences Editor</span></a>
+                                            
+                                        </li>
+                                    
+                                        <li>
+                                            
+                                                <a href="../tutorial-creatingAPreferencesEditorUsingThePreferencesFramework/InstantiatingTheEnhancerAndSettingsStoreOnly.html"><span class="infusion-docs-TOC-pageName">Instantiating the Enhancer and Settings Store Only</span></a>
+                                            
+                                        </li>
+                                    
+                                        <li>
+                                            
+                                                <a href="../tutorial-creatingAPreferencesEditorUsingThePreferencesFramework/StylingThePreferencesEditor.html"><span class="infusion-docs-TOC-pageName">Styling the Preferences Editor</span></a>
+                                            
+                                        </li>
+                                    
+                                        <li>
+                                            
+                                                <a href="../to-do/AddingPrefsEditorToSite.html"><span class="infusion-docs-TOC-pageName">Adding a Basic Preferences Editor to a Site</span></a>
+                                            
+                                        </li>
+                                    
+                                        <li>
+                                            
+                                                <a href="../to-do/WorkingWithPrefsEditorOnSite.html"><span class="infusion-docs-TOC-pageName">Working With A Preferences Editor On Your Site</span></a>
+                                            
+                                        </li>
+                                    
+                                        <li>
+                                            
+                                                <a href="../tutorial-usingStringTemplates/UsingStringTemplates.html"><span class="infusion-docs-TOC-pageName">Using String Templates</span></a>
+                                            
+                                        </li>
+                                    
+                                </ul>
+                            
+                                <span class="infusion-docs-sectionName">Creating an Adjuster UI</span>
+                                <ul>
+                                    
+                                        <li>
+                                            
+                                                <a href="../tutorial-creatingANewAdjusterUI/CreatingANewAdjusterUI.html"><span class="infusion-docs-TOC-pageName">Creating a New Adjuster UI</span></a>
+                                            
+                                        </li>
+                                    
+                                        <li>
+                                            
+                                                <a href="../tutorial-creatingANewAdjusterUI/HowToCreateAndUseFontIcons.html"><span class="infusion-docs-TOC-pageName">How to Create and Use Font Icons</span></a>
+                                            
+                                        </li>
+                                    
+                                </ul>
+                            
+                                <span class="infusion-docs-sectionName">User Interface Options</span>
+                                <ul>
+                                    
+                                        <li>
+                                            
+                                                <a href="../tutorial-userInterfaceOptions/UserInterfaceOptions.html"><span class="infusion-docs-TOC-pageName">User Interface Options</span></a>
+                                            
+                                        </li>
+                                    
+                                </ul>
+                            
+                        
+                    
+                        
+                        
+                    
+                </nav>
+
+                <article class="infusion-docs-mainContent small-12 medium-9 column">
+
+                    <div class="flc-toc-tocContainer infusion-docs-toc"> </div>
+
+                    <h1>Pick a component type</h1>
+
+                    <p class="infusion-docs-githubLink"><a href="https://github.com/fluid-project/infusion-docs/blob/master/src/documents/tutorial-gettingStartedWithInfusion/PickAComponentType.md" target="_blank">Edit on GitHub</a></p>
+
+                    
+
+                    <div class="infusion-docs-articleBody">
+                        <hr>
+<p>Part of the <a href="GettingStartedWithInfusion.html">Getting Started with Infusion Tutorial</a></p>
+<hr>
+<p>The Infusion Framework provides lots of supports for creating components. We have defined a number of different types, or grades, of component, and the Framework will automatically set up different stuff for you depending on which grade of component you create. (For more advanced information about grades, see <a href="../ComponentGrades.html">Component Grades</a>.)</p>
+<p>The basic types are:</p>
+<ul>
+<li><strong>little component</strong>: the most basic type</li>
+<li><strong>model component</strong>: for components that will have to maintain an abstract data model</li>
+<li><strong>evented component</strong>: for components that want to fire events</li>
+<li><strong>view component</strong>: for components that have a user interface</li>
+<li><strong>renderer component</strong>: for components that want to render the user interface using a template</li>
+</ul>
+<p>These types of components build upon each other, a teeny little bit like inheritance:</p>
+<ul>
+<li><strong>model</strong> and <strong>evented components</strong> add support for models and events (respectively) to <strong>little components</strong></li>
+<li><strong>view components</strong> support models and events, and also add support for views.</li>
+<li><strong>renderer components</strong> are <strong>view components</strong> with the <a href="../Renderer.html">Renderer</a> added.</li>
+</ul>
+<p><img src="../images/component-grades-venn-diagram.svg" alt="A venn diagram showing the composition of grades"></p>
+<p>For this tutorial, we suggest you work through all of the examples in order, to understand what each type of component offers. That way, you&#39;ll be in a better position to decide which grade you&#39;ll need for your components. Regardless of grade, the basic process for creating a component is the same. The next page in this tutorial will explain this basic process using the <strong>little component</strong>, but you will see the same process for each of the component types.</p>
+<p>Next: <a href="BasicComponentCreation-LittleComponents.html">Basic Component Creation - Little Components</a></p>
+
+                    </div>
+
+                </article>
+
+            </div>
+
+            <footer class="row infusion-docs-footer">
+                <p class="infusion-docs-footerInfusion">Infusion is created by the <a href="http://fluidproject.org/" target="_blank">Fluid Project</a>,<br/>
+                a project of the <a href="http://idrc.ocad.ca/" target="_blank">Inclusive Design Research Centre</a> at <a href="http://www.ocadu.ca/" target="_blank">OCAD University</a>, funded by a grant from <a href="http://www.mellon.org/" target="_blank">The Andrew W. Mellon Foundation</a>.</p>
+            </footer>
+
+        </div> <!-- end container -->
+
+    </body>
+</html>

@@ -1,0 +1,520 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <title>Component Lifecycle | Fluid Infusion</title>
+        <link rel="stylesheet" href="css/normalize.css">
+        <link rel="stylesheet" href="css/foundation.css">
+        <link rel="stylesheet" href="css/highlightjs-custom.css">
+        <link rel="stylesheet" type="text/css" href="lib/infusion/src/framework/preferences/css/Enactors.css" />
+        <link rel="stylesheet" type="text/css" href="lib/infusion/src/framework/preferences/css/PrefsEditor.css" />
+        <link rel="stylesheet" type="text/css" href="lib/infusion/src/framework/preferences/css/SeparatedPanelPrefsEditor.css" />
+        <link rel="stylesheet" href="css/infusion-docs.css">
+
+        <link rel="icon" type="image/png" href="images/favico.png">
+
+        <script type="text/javascript" src="lib/infusion/infusion-uio.js"></script>
+    </head>
+    <body class="infusion-docs">
+
+        <div class="container infusion-docs-container">
+
+            <!-- BEGIN markup for Preference Editor -->
+            <div class="flc-prefsEditor-separatedPanel fl-prefsEditor-separatedPanel">
+                <!-- This is the div that will contain the Preference Editor component -->
+                <div class="flc-slidingPanel-panel flc-prefsEditor-iframe"></div>
+
+                <!-- This div is for the sliding panel that shows and hides the Preference Editor controls -->
+                <div class="fl-panelBar">
+                    <span class="fl-prefsEditor-buttons">
+                        <button id="reset" class="flc-prefsEditor-reset fl-prefsEditor-reset"><span class="fl-icon-undo"></span> Reset</button>
+                        <button id="show-hide" class="flc-slidingPanel-toggleButton fl-prefsEditor-showHide"> Show/Hide</button>
+                    </span>
+                </div>
+            </div>
+            <!-- END markup for Preference Editor -->
+
+            <script type="text/javascript">
+                fluid.uiOptions.prefsEditor(".flc-prefsEditor-separatedPanel", {
+                    "templatePrefix": "lib/infusion/src/framework/preferences/html/",
+                    "messagePrefix": "lib/infusion/src/framework/preferences/messages/",
+                    "tocTemplate": "lib/infusion/src/components/tableOfContents/html/TableOfContents.html"
+                });
+            </script>
+
+            <header class="row infusion-docs-header">
+                <div class="infusion-docs-fluidLogo small-12 medium-3 column">
+                    <a class="infusion-docs-fluidLogoText" href="index.html" title="Infusion">infusion</a>
+                </div>
+
+                <nav class="small-12 medium-9 column">
+                    <a href="index.html" title="Infusion">Infusion</a>
+                    <a href="index-tutorials.html" title="Tutorials">Tutorials</a>
+                    <a href="index-api.html" title="A P I">API</a>
+                </nav>
+            </header>
+
+            <div class="row infusion-docs-mainBody">
+                <nav class="infusion-docs-TOC small-12 medium-3 column">
+                    
+                        
+                        
+                            <span class="infusion-docs-category">Infusion</span>
+                            
+                                <span class="infusion-docs-sectionName">Components</span>
+                                <ul>
+                                    
+                                        <li>
+                                            
+                                                <a href="FrameworkConcepts.html"><span class="infusion-docs-TOC-pageName">Framework Concepts</span></a>
+                                            
+                                        </li>
+                                    
+                                        <li>
+                                            
+                                                <a href="UnderstandingInfusionComponents.html"><span class="infusion-docs-TOC-pageName">Understanding Infusion Components</span></a>
+                                            
+                                        </li>
+                                    
+                                        <li>
+                                            
+                                                <a href="ComponentOptionsAndDefaults.html"><span class="infusion-docs-TOC-pageName">Understanding Component Options And Their Defaults</span></a>
+                                            
+                                        </li>
+                                    
+                                        <li>
+                                            
+                                                <a href="ComponentConfigurationOptions.html"><span class="infusion-docs-TOC-pageName">Component Configuration Options</span></a>
+                                            
+                                        </li>
+                                    
+                                        <li>
+                                            
+                                                <a href="ComponentGrades.html"><span class="infusion-docs-TOC-pageName">Component Grades</span></a>
+                                            
+                                        </li>
+                                    
+                                        <li>
+                                            
+                                                <a href="OptionsMerging.html"><span class="infusion-docs-TOC-pageName">Options Merging</span></a>
+                                            
+                                        </li>
+                                    
+                                        <li>
+                                            
+                                                <span class="infusion-docs-TOC-pageName">Component Lifecycle</span>
+                                            
+                                        </li>
+                                    
+                                        <li>
+                                            
+                                                <a href="DOMBinder.html"><span class="infusion-docs-TOC-pageName">DOM Binder</span></a>
+                                            
+                                        </li>
+                                    
+                                </ul>
+                            
+                                <span class="infusion-docs-sectionName">Inversion of Control</span>
+                                <ul>
+                                    
+                                        <li>
+                                            
+                                                <a href="HowToUseInfusionIoC.html"><span class="infusion-docs-TOC-pageName">How To Use Infusion IoC</span></a>
+                                            
+                                        </li>
+                                    
+                                        <li>
+                                            
+                                                <a href="SubcomponentDeclaration.html"><span class="infusion-docs-TOC-pageName">Subcomponent Declaration</span></a>
+                                            
+                                        </li>
+                                    
+                                        <li>
+                                            
+                                                <a href="Contexts.html"><span class="infusion-docs-TOC-pageName">Contexts</span></a>
+                                            
+                                        </li>
+                                    
+                                        <li>
+                                            
+                                                <a href="Invokers.html"><span class="infusion-docs-TOC-pageName">Invokers</span></a>
+                                            
+                                        </li>
+                                    
+                                        <li>
+                                            
+                                                <a href="ExpansionOfComponentOptions.html"><span class="infusion-docs-TOC-pageName">Expansion Of Component Options</span></a>
+                                            
+                                        </li>
+                                    
+                                        <li>
+                                            
+                                                <a href="IoCSS.html"><span class="infusion-docs-TOC-pageName">IoCSS</span></a>
+                                            
+                                        </li>
+                                    
+                                        <li>
+                                            
+                                                <a href="DeclarativeThisismInIoC.html"><span class="infusion-docs-TOC-pageName">Declarative this-ism In IoC</span></a>
+                                            
+                                        </li>
+                                    
+                                        <li>
+                                            
+                                                <a href="IoCReferences.html"><span class="infusion-docs-TOC-pageName">IoC References</span></a>
+                                            
+                                        </li>
+                                    
+                                </ul>
+                            
+                                <span class="infusion-docs-sectionName">Events</span>
+                                <ul>
+                                    
+                                        <li>
+                                            
+                                                <a href="Events.html"><span class="infusion-docs-TOC-pageName">Events</span></a>
+                                            
+                                        </li>
+                                    
+                                        <li>
+                                            
+                                                <a href="InfusionEventSystem.html"><span class="infusion-docs-TOC-pageName">Infusion Event System</span></a>
+                                            
+                                        </li>
+                                    
+                                        <li>
+                                            
+                                                <a href="EventInjectionAndBoiling.html"><span class="infusion-docs-TOC-pageName">Event injection and boiling</span></a>
+                                            
+                                        </li>
+                                    
+                                </ul>
+                            
+                                <span class="infusion-docs-sectionName">ChangeApplier</span>
+                                <ul>
+                                    
+                                        <li>
+                                            
+                                                <a href="ChangeApplier.html"><span class="infusion-docs-TOC-pageName">ChangeApplier</span></a>
+                                            
+                                        </li>
+                                    
+                                </ul>
+                            
+                                <span class="infusion-docs-sectionName">Renderer</span>
+                                <ul>
+                                    
+                                        <li>
+                                            
+                                                <a href="Renderer.html"><span class="infusion-docs-TOC-pageName">Renderer</span></a>
+                                            
+                                        </li>
+                                    
+                                        <li>
+                                            
+                                                <a href="HowToUseTheRenderer.html"><span class="infusion-docs-TOC-pageName">How To Use the Renderer</span></a>
+                                            
+                                        </li>
+                                    
+                                        <li>
+                                            
+                                                <a href="RendererComponentTrees.html"><span class="infusion-docs-TOC-pageName">Renderer Component Trees</span></a>
+                                            
+                                        </li>
+                                    
+                                        <li>
+                                            
+                                                <a href="ProtoComponentTypes.html"><span class="infusion-docs-TOC-pageName">ProtoComponent Types</span></a>
+                                            
+                                        </li>
+                                    
+                                        <li>
+                                            
+                                                <a href="RendererComponentTreeExpanders.html"><span class="infusion-docs-TOC-pageName">Renderer Component Tree Expanders</span></a>
+                                            
+                                        </li>
+                                    
+                                        <li>
+                                            
+                                                <a href="Cutpoints.html"><span class="infusion-docs-TOC-pageName">Cutpoints</span></a>
+                                            
+                                        </li>
+                                    
+                                        <li>
+                                            
+                                                <a href="RendererComponents.html"><span class="infusion-docs-TOC-pageName">Renderer Components</span></a>
+                                            
+                                        </li>
+                                    
+                                        <li>
+                                            
+                                                <a href="RendererDecorators.html"><span class="infusion-docs-TOC-pageName">Renderer Decorators</span></a>
+                                            
+                                        </li>
+                                    
+                                </ul>
+                            
+                                <span class="infusion-docs-sectionName">Preferences Framework</span>
+                                <ul>
+                                    
+                                        <li>
+                                            
+                                                <a href="PreferencesFramework.html"><span class="infusion-docs-TOC-pageName">Preferences Framework</span></a>
+                                            
+                                        </li>
+                                    
+                                        <li>
+                                            
+                                                <a href="PreferencesEditor.html"><span class="infusion-docs-TOC-pageName">Preferences Editor</span></a>
+                                            
+                                        </li>
+                                    
+                                        <li>
+                                            
+                                                <a href="Builder.html"><span class="infusion-docs-TOC-pageName">Builder</span></a>
+                                            
+                                        </li>
+                                    
+                                        <li>
+                                            
+                                                <a href="PrimarySchemaForPreferencesFramework.html"><span class="infusion-docs-TOC-pageName">Primary Schema</span></a>
+                                            
+                                        </li>
+                                    
+                                        <li>
+                                            
+                                                <a href="AuxiliarySchemaForPreferencesFramework.html"><span class="infusion-docs-TOC-pageName">Auxiliary Schema</span></a>
+                                            
+                                        </li>
+                                    
+                                        <li>
+                                            
+                                                <a href="ConnectingThePartsOfAPreferencesEditor.html"><span class="infusion-docs-TOC-pageName">Connecting the Parts of a Preferences Editor</span></a>
+                                            
+                                        </li>
+                                    
+                                        <li>
+                                            
+                                                <a href="Enactors.html"><span class="infusion-docs-TOC-pageName">Enactors</span></a>
+                                            
+                                        </li>
+                                    
+                                        <li>
+                                            
+                                                <a href="Panels.html"><span class="infusion-docs-TOC-pageName">Panels</span></a>
+                                            
+                                        </li>
+                                    
+                                        <li>
+                                            
+                                                <a href="CompositePanels.html"><span class="infusion-docs-TOC-pageName">Composite Panels</span></a>
+                                            
+                                        </li>
+                                    
+                                        <li>
+                                            
+                                                <a href="ConditionalSubpanels.html"><span class="infusion-docs-TOC-pageName">Conditional Subpanels</span></a>
+                                            
+                                        </li>
+                                    
+                                        <li>
+                                            
+                                                <a href="LocalizationInThePreferencesFramework.html"><span class="infusion-docs-TOC-pageName">Localization in the Preferences Framework</span></a>
+                                            
+                                        </li>
+                                    
+                                </ul>
+                            
+                                <span class="infusion-docs-sectionName">General</span>
+                                <ul>
+                                    
+                                        <li>
+                                            
+                                                <a href="ModelRelay.html"><span class="infusion-docs-TOC-pageName">Model Relay</span></a>
+                                            
+                                        </li>
+                                    
+                                        <li>
+                                            
+                                                <a href="ProgressiveEnhancement.html"><span class="infusion-docs-TOC-pageName">Progressive Enhancement</span></a>
+                                            
+                                        </li>
+                                    
+                                        <li>
+                                            
+                                                <a href="ClassNameConventions.html"><span class="infusion-docs-TOC-pageName">Class Name Conventions</span></a>
+                                            
+                                        </li>
+                                    
+                                        <li>
+                                            
+                                                <a href="IoCTestingFramework.html"><span class="infusion-docs-TOC-pageName">IoC Testing Framework</span></a>
+                                            
+                                        </li>
+                                    
+                                </ul>
+                            
+                                <span class="infusion-docs-sectionName">Migrating to Infusion 1.5</span>
+                                <ul>
+                                    
+                                        <li>
+                                            
+                                                <a href="APIChangesFrom1_4To1_5.html"><span class="infusion-docs-TOC-pageName">API Changes from 1.4 to 1.5</span></a>
+                                            
+                                        </li>
+                                    
+                                        <li>
+                                            
+                                                <a href="DeprecationsIn1_5.html"><span class="infusion-docs-TOC-pageName">Deprecations In 1.5</span></a>
+                                            
+                                        </li>
+                                    
+                                        <li>
+                                            
+                                                <a href="tutorial-migratingToInfusion1.5/UIOptionsMigration.html"><span class="infusion-docs-TOC-pageName">UI Options Migration</span></a>
+                                            
+                                        </li>
+                                    
+                                        <li>
+                                            
+                                                <a href="tutorial-migratingToInfusion1.5/PagerMigration.html"><span class="infusion-docs-TOC-pageName">Pager Migration</span></a>
+                                            
+                                        </li>
+                                    
+                                </ul>
+                            
+                                <span class="infusion-docs-sectionName">Migrating to Infusion 2.0</span>
+                                <ul>
+                                    
+                                        <li>
+                                            
+                                                <a href="APIChangesFrom1_5To2_0.html"><span class="infusion-docs-TOC-pageName">API Changes from 1.5 to 2.0</span></a>
+                                            
+                                        </li>
+                                    
+                                </ul>
+                            
+                        
+                    
+                        
+                        
+                    
+                        
+                        
+                    
+                </nav>
+
+                <article class="infusion-docs-mainContent small-12 medium-9 column">
+
+                    <div class="flc-toc-tocContainer infusion-docs-toc"> </div>
+
+                    <h1>Component Lifecycle</h1>
+
+                    <p class="infusion-docs-githubLink"><a href="https://github.com/fluid-project/infusion-docs/blob/master/src/documents/ComponentLifecycle.md" target="_blank">Edit on GitHub</a></p>
+
+                    
+
+                    <div class="infusion-docs-articleBody">
+                        <p>Every Fluid component has a standard lifecycle, various points of which are signalled by firing of standard framework events. Every component which has a grade of <a href="ComponentGrades.html">fluid.eventedComponent</a> is able to receive and react to these events. The events, in the expected order of firing for a component, are as follows:</p>
+<table>
+    <thead>
+        <tr>
+            <th>Event</th>
+            <th>Arguments</th>
+            <th>Lifecycle Point</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>onCreate</td>
+            <td>
+                <dl>
+                    <dt><dfn>that {Object}</dfn></dt>
+                    <dd>the component being constructed</dd>
+                </dl>
+            </td>
+            <td>
+                Fired when component construction is complete - that is, all options have been merged for the component and all subcomponents (which were not marked with <a href="tutorial-gettingStartedWithInfusion/Subcomponents.html">createOnEvent</a>) have constructed.
+            </td>
+        </tr>
+        <tr>
+            <td>onAttach</td>
+            <td>
+                <dl>
+                    <dt><dfn>that {Object}</dfn></dt>
+                    <dd>the component being attached</dd>
+                    <dt><dfn>name {String}</dfn></dt>
+                    <dd>the member name of the component in the parent to which it is being attached</dd>
+                    <dt><dfn>parent {Object}</dfn></dt>
+                    <dd>the parent component to which the component is being attached</dd>
+                </dl>
+            </td>
+            <td>
+                Fired when the component is attached to the overall component tree of which it is a part.
+            </td>
+        </tr>
+        <tr>
+            <td>onClear</td>
+            <td>
+                <dl>
+                    <dt><dfn>that {Object}</dfn></dt>
+                    <dd>the component being cleared</dd>
+                    <dt><dfn>name {String}</dfn></dt>
+                    <dd>the member name of the component in the parent from which it is being cleared</dd>
+                    <dt><dfn>parent {Object}</dfn></dt>
+                    <dd>the parent component to which the component is being deattached</dd>
+                </dl>
+            </td>
+            <td>
+               Fired when the component is detached from the component tree, as a preliminary to destroying it completely
+            </td>
+        </tr>
+        <tr>
+            <td>onDestroy</td>
+            <td>
+                <dl>
+                    <dt><dfn>that {Object}</dfn></dt>
+                    <dd>the component being destroyed</dd>
+                </dl>
+            </td>
+            <td>
+                Fired when the component is about to be destroyed. This will be a preliminary to beginning the destruction process for all its subcomponents.
+            </td>
+        </tr>
+        <tr>
+            <td>afterDestroy</td>
+            <td>
+            <dl>
+                <dt><dfn>that {Object}</dfn></dt>
+                <dd>the component which has been destroyed</dd>
+            </dl>
+            </td>
+            <td>
+                Fired after the component and its children have been completely destroyed.
+                <p>
+                    <em><strong>NOTE:</strong> at this point you may only safely access plain data members of the component such as id and typeName. Do not attempt to invoke any methods, fire any events, or resolve any IoC references from listeners to this event.</em>
+                </p>
+            </td>
+        </tr>
+    </tbody>
+</table>
+
+<p>Note that since JavaScript is a garbage-collected language, the component object reference and many of its members will hang around in memory during and after the destruction process, although it will as noted above be detached from its parent (via a call to <code>delete</code>) and similarly all subcomponent references will be recursively detached from their parents. The component author may schedule various actions to clean up any external resources (perhaps a jQuery widget, or a network connection) during the destruction process by adding listeners to the <code>onDestroy</code> event.</p>
+<p>Every Fluid component is supplied with a standard method named <code>destroy</code> which is available after <code>onCreate</code> has fired. destroy takes no arguments and will initiate the destruction process for the component - that is, <code>onClear</code> followed by <code>onDestroy</code> and <code>afterDestroy</code>.</p>
+
+                    </div>
+
+                </article>
+
+            </div>
+
+            <footer class="row infusion-docs-footer">
+                <p class="infusion-docs-footerInfusion">Infusion is created by the <a href="http://fluidproject.org/" target="_blank">Fluid Project</a>,<br/>
+                a project of the <a href="http://idrc.ocad.ca/" target="_blank">Inclusive Design Research Centre</a> at <a href="http://www.ocadu.ca/" target="_blank">OCAD University</a>, funded by a grant from <a href="http://www.mellon.org/" target="_blank">The Andrew W. Mellon Foundation</a>.</p>
+            </footer>
+
+        </div> <!-- end container -->
+
+    </body>
+</html>
